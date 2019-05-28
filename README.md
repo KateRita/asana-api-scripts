@@ -1,7 +1,9 @@
 # asana-api-scripts
 
 - get personal access token
-- export ASANA_ACCESS_TOKEN='<accesstoken>'
+- export ASANA_ACCESS_TOKEN='`<accesstoken>`'
+
+# References
 Quick Start:
 https://asana.com/developers/documentation/getting-started/quick-start
 
