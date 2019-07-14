@@ -16,9 +16,6 @@ basic features:
 
 Note: This is based on the assumption that the 1:1 projects won't change that often, so Ids can be hardcoded to save time/reduce API calls.
 
-## get user Ids
-A util I used to get user ids from a list of projects.
-
 ### References
 Quick Start:
 https://asana.com/developers/documentation/getting-started/quick-start

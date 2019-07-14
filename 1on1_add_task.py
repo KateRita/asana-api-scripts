@@ -8,7 +8,7 @@ from oneononeprojects import projects
 # projects = [
 #     { 'name': 'KateTest',         #user-friendly name
 #       'id': '<projectId>',        # string, project id
-#       'userid': <userId>,         # number, userid of the user who should be assigned tasks in this project
+#       'userid': '<userEmail>',    # string, email address of the other user who should be assigned tasks in this project
 #       'team': 'self'},            # team name. matches list of teams
 # ]
 
