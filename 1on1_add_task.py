@@ -2,6 +2,7 @@ import os
 import asana
 
 from oneononeprojects import projects
+teams = [ 'api', 'apps', 'test']
 
 # projects is an array of objects
 
@@ -44,20 +45,23 @@ def get_projects_by_user_select(projects):
 
 def get_user_selected_projects(projects):
 
-    teams = ['all', 'api', 'apps', 'some', 'self' ]
     for i, team in enumerate(teams):
         print i, ': ' + team
-    selected_team = raw_input('Select a team: ')
+    print i + 1, ': all'
+    print i + 2, ': choose'
+
+    selected_team = raw_input('Select which projects or teams to add task to: ')
 
     if selected_team == 'all':
         return projects
-    elif selected_team == 'some':
+    elif selected_team == 'choose':
         return get_projects_by_user_select(projects)
     elif selected_team in teams:
         return get_projects_by_team(selected_team)
 
     else:
-        print('Invalid Team: ' + selected_team)
+        print('Unknown Team: ' + selected_team)
+        print('See list of teams defined in ' + os.path.basename(__file__))
         return []
 
 def get_assignee(assign_pref, project):
@@ -86,7 +90,7 @@ assign_string = raw_input('Assign Task? (me/them/none) ')
 print
 print("Creating tasks...")
 print
-
+print("Adding to " + str(len(user_selected_projects)) + " projects.")
 for project in user_selected_projects:
 
     assignee = get_assignee(assign_string, project)
