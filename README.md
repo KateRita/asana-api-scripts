@@ -1,6 +1,6 @@
 # asana-api-scripts
 
-Scripts that 
+Scripts that
 Setup:
 1. Get a personal access token
 2. Set an environment variable: `export ASANA_ACCESS_TOKEN='<accesstoken>'`
@@ -17,7 +17,7 @@ Define a task title & body, create copies of that task in multiple 1 on 1 projec
 **Usage:**
 Create a file called oneononeprojects.py that contains an array of objects in this format:
 
-``` 
+```
 projects = [
      { 'name': 'KateTest',         #user-friendly name
        'id': '<projectId>',        # string, project id
@@ -34,5 +34,3 @@ https://github.com/Asana/python-asana/
 
 Documentation:
 https://asana.com/developers/api-reference/tasks#create
-
-New website:

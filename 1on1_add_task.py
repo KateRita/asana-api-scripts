@@ -2,7 +2,7 @@ import os
 import asana
 
 from oneononeprojects import projects
-teams = [ 'api', 'apps', 'test']
+groups = [ 'api', 'apps', 'test']
 
 # projects is an array of objects
 
@@ -10,7 +10,7 @@ teams = [ 'api', 'apps', 'test']
 #     { 'name': 'KateTest',         #user-friendly name
 #       'id': '<projectId>',        # string, project id
 #       'userid': '<userEmail>',    # string, email address of the other user who should be assigned tasks in this project
-#       'team': 'self'},            # team name. matches list of teams
+#       'group': 'self'},            # group name. matches list of groups
 # ]
 
 def get_user_task_title():
@@ -27,10 +27,10 @@ def get_user_task_description():
         contents.append(line)
     return '\n'.join(contents)
 
-def get_projects_by_team(team):
+def get_projects_by_group(group):
     selected_projects = []
     for project in projects:
-        if project['team'] == team:
+        if project['group'] == group:
             selected_projects.append(project)
     return selected_projects
 
@@ -44,25 +44,24 @@ def get_projects_by_user_select(projects):
 
 
 def get_user_selected_projects(projects):
-
-    for i, team in enumerate(teams):
-        print i, ': ' + team
+    for i, group in enumerate(groups):
+        print i, ': ' + group
     print i + 1, ': all'
     print i + 2, ': choose'
 
-    selected_team = raw_input('Select which projects or teams to add task to: ')
+    selected_group = raw_input('Select (name) which projects or groups to add task to: ')
 
-    if selected_team == 'all':
+    if selected_group == 'all':
         return projects
-    elif selected_team == 'choose':
+    elif selected_group == 'choose':
         return get_projects_by_user_select(projects)
-    elif selected_team in teams:
-        return get_projects_by_team(selected_team)
+    elif selected_group in groups:
+        return get_projects_by_group(selected_group)
 
     else:
-        print('Unknown Team: ' + selected_team)
-        print('See list of teams defined in ' + os.path.basename(__file__))
-        return []
+        print('Unknown group: ' + selected_group)
+        print('See list of groups defined in ' + os.path.basename(__file__))
+        quit()
 
 def get_assignee(assign_pref, project):
     if assign_pref == 'me':
