@@ -1,8 +1,7 @@
 # asana-api-scripts
 
-Scripts that
 Setup:
-1. Get a personal access token
+1. Get a personal access token ([Quick Start](https://asana.com/developers/documentation/getting-started/quick-start), see 'Authentication')
 2. Set an environment variable: `export ASANA_ACCESS_TOKEN='<accesstoken>'`
 
 ## 1on1 Add Task
