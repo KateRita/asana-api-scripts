@@ -9,6 +9,7 @@ Setup:
 Define a task title & body, create copies of that task in multiple 1 on 1 projects.
 
 **Options:**
+- use command line option `--dry-run` to see which projects would have tasks added w/o actually adding them.
 - prompt user for task title & description
 - add task to all projects, to all projects for a given team, or prompt the user to add to each project
 - assign to me, to other member of 1:1 project, or to no one
@@ -18,12 +19,19 @@ Create a file called oneononeprojects.py that contains an array of objects in th
 
 ```
 projects = [
-     { 'name': 'KateTest',         #user-friendly name
+     { 'name': 'KateTest',         # user-friendly name
        'id': '<projectId>',        # string, project id
        'userid': '<userEmail>',    # string, email address of the other user who should be assigned tasks in this project
-       'team': 'self'},            # team name. matches list of teams defined in oneonone.py
+       'group': 'self'},           # group name. 
 ]
 ```
+
+`python 1on1_add_task.py`
+
+or
+
+`python 1on1_add_task.py --dry-run`
+
 ### References
 Quick Start:
 https://asana.com/developers/documentation/getting-started/quick-start
