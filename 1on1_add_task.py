@@ -17,9 +17,9 @@ def get_user_selected_group(groups):
     """Promppt user to select project group."""
 
     for i, group in enumerate(groups):
-        print i, ': ' + group
-    print i + 1, ': all'
-    print i + 2, ': choose'
+        print( i, ': ' + group)
+    print (i + 1, ': all')
+    print (i + 2, ': choose')
 
     return raw_input('Select (name) which projects or groups to add task to: ')
 
@@ -115,9 +115,9 @@ task_name = get_user_task_title()
 task_notes = get_user_task_description()
 assignee_type = raw_input('Choose Task Assignee (me/them/none): ')
 
-print
+print()
 print("Creating tasks...")
-print
+print()
 print("Adding to " + str(len(user_selected_projects)) + " projects.")
 
 for project in user_selected_projects:
@@ -138,9 +138,9 @@ for project in user_selected_projects:
     if not args.dry_run:
         result = client.tasks.create(task)
         print('    ' + result['projects'][0]['name'] + '-> Done!')
-        print
+        print()
     else:
         print('    ' + project['name'] + '-> Dry Run!')
-        print
+        print()
 
 
