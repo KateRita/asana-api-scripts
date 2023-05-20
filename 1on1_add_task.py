@@ -21,13 +21,13 @@ def get_user_selected_group(groups):
     print (i + 1, ': all')
     print (i + 2, ': choose')
 
-    return raw_input('Select (name) which projects or groups to add task to: ')
+    return input('Select (name) which projects or groups to add task to: ')
 
 
 def get_user_task_title():
     "Prompt user for task title, and return result."
 
-    return raw_input("Enter task title: ")
+    return input("Enter task title: ")
 
 def get_user_task_description():
     """Prompt user for task description. return as a string."""
@@ -36,7 +36,7 @@ def get_user_task_description():
     contents = []
     while True:
         try:
-            line = raw_input("")
+            line = input("")
         except EOFError:
             break
         contents.append(line)
@@ -52,7 +52,7 @@ def get_projects_by_user_select(projects):
 
     selected_projects = []
     for project in projects:
-        add_to_project = raw_input('Add to ' + project['name'] + ' [y/n]? ')
+        add_to_project = input('Add to ' + project['name'] + ' [y/n]? ')
         if(add_to_project == 'y'):
             selected_projects.append(project)
     return selected_projects
@@ -113,7 +113,7 @@ me = client.users.me()
 user_selected_projects = get_user_selected_projects(projects)
 task_name = get_user_task_title()
 task_notes = get_user_task_description()
-assignee_type = raw_input('Choose Task Assignee (me/them/none): ')
+assignee_type = input('Choose Task Assignee (me/them/none): ')
 
 print()
 print("Creating tasks...")
